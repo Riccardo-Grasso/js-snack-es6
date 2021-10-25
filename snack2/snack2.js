@@ -16,15 +16,35 @@ function valoriRandom(min, max) {
     return numeroRandom;
 }
 
-for (i = 0; i < listaSquadre.length; i++) {
 
-    let randomPoints = valoriRandom(0, 100);
-    listaSquadre[i].punti = randomPoints;
+function valoriGenerator() {
 
 
-    let randomFouls = valoriRandom(0, 20);
-    listaSquadre[i].falli = randomFouls;
+    for (i = 0; i < listaSquadre.length; i++) {
+
+        let randomPoints = valoriRandom(0, 100);
+        listaSquadre[i].punti = randomPoints;
+
+
+        let randomFouls = valoriRandom(0, 20);
+        listaSquadre[i].falli = randomFouls;
+
+    }
+    console.log(listaSquadre);
+}
+
+
+function nuovaLista() {
+
+    const newList = [];
+
+    for (i = 0; i < listaSquadre.length; i++) {
+        const { nome, falli } = listaSquadre[i];
+        newList.push(`Nome: ${nome} - Falli subiti: ${falli}`);
+    }
+    console.log(newList);
 
 }
 
-console.log(listaSquadre);
+valoriGenerator();
+nuovaLista();
